@@ -18542,6 +18542,9 @@
   }
 }
 @media (max-width: 991px) {
+  .md-mb{
+    margin-bottom: 50px !important;
+  }
   .md-me-0,
   .md-mx-0 {
     margin-right: 0 !important;
