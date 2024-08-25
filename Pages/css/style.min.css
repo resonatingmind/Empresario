@@ -3210,6 +3210,7 @@ textarea:focus {
 }
 .theme-demos .all-demo {
   background-color: #1f242e;
+  display: none;
 }
 .theme-demos .all-demo .theme-wrapper {
   padding: 0 9px;
@@ -3220,7 +3221,7 @@ textarea:focus {
   line-height: 0;
 }
 .theme-demos .all-demo .theme-wrapper > div {
-  display: inline-block;
+  display: none;
   vertical-align: middle;
   color: var(--white);
   font-size: 14px;
@@ -3232,6 +3233,7 @@ textarea:focus {
   background-color: #48a133;
   position: relative;
   z-index: 1;
+  display: none;
 }
 .bg-base-color,
 .header-cart-icon .cart-count {

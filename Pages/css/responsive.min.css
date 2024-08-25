@@ -805,6 +805,12 @@
   }
 }
 @media (max-width: 991px) {
+  .md-flex-row{
+    flex-direction: column !important;
+  }
+  .md-my-30px{
+    margin-top: 30px !important;
+  }
   .md-fs-0 {
     font-size: 0;
   }
@@ -2455,6 +2461,9 @@
   .md-h-850px {
     height: 850px !important;
   }
+  .md-h-1000px {
+    height: 900px !important;
+  }
   .md-h-auto {
     height: auto !important;
   }
@@ -3151,6 +3160,9 @@
   }
   .sm-h-850px {
     height: 850px !important;
+  }
+  .sm-h-1000px {
+    height: 1000px !important;
   }
   .sm-h-auto {
     height: auto !important;

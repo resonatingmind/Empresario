@@ -9606,6 +9606,9 @@ fieldset:disabled .btn {
     margin-right: 3rem !important;
     margin-left: 3rem !important;
   }
+  .mx-md-150{
+    margin-left: -150px !important;
+  }
   .mx-md-auto {
     margin-right: auto !important;
     margin-left: auto !important;
