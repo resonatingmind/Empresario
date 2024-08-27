@@ -87,36 +87,58 @@
               <span class="navbar-toggler-line"></span>
             </button>
             <div
-              class="mx-sm-0 mx-md-150 collapse navbar-collapse justify-content-center"
+              class="mx-sm-0  collapse navbar-collapse justify-content-center"
               id="navbarNav"
-              style="margin-left: -150px;"
             >
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <a href="index.html" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown dropdown-with-icon-style02">
                   <a href="info.html" class="nav-link"
-                    >Info</a
+                    >About <i class="dropdown-toggle" style="margin-left: 10px;"></i> </a
                   >
-                </li>
-                
-                <li class="nav-item">
-                  <a href="#tracks" class="nav-link">Tracks</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#incentives" class="nav-link"
-                    >Incentives</a
+                  <i
+                    class="fa-solid fa-angle-down dropdown-toggle"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></i>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                    style="background-color: white; color: #1E2033;"
                   >
+                    <li>
+                      <a href="info.html"
+                      style="color: #1E2033; font-weight: 600;"
+                        >Info</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#tracks"
+                      style="color: #1E2033; font-weight: 600;"
+                        >Tracks</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#incentives"
+                      style="color: #1E2033; font-weight: 600;"
+                        >Incentives</a
+                      >
+                    </li>
+                    <li>
+                      <a href="resources.html"
+                      style="color: #1E2033; font-weight: 600;"
+                        >Resources</a
+                      >
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item">
                   <a href="winners.html" class="nav-link"
                     >Winners</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a href="resources.html" class="nav-link"
-                    >Resources</a
                   >
                 </li>
                 <li class="nav-item">
@@ -132,6 +154,11 @@
                 <li class="nav-item">
                   <a href="mentors.html" class="nav-link"
                     >Mentors</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="contact-us.html" class="nav-link"
+                    >Contact</a
                   >
                 </li>
               </ul>
@@ -155,8 +182,9 @@
     <!-- end header -->
     <!-- start hero section -->
     <section
-      class="cover-background full-screen ipad-top-space-margin py-0 md-h-1000px sm-h-1000px xl-h-1000px"
-      style="background-image: url(/Empresario/images/event-images/images\ \(4\).jpeg); background-color: #252840; min-height: 750px;"
+    min-height: 1200px;
+      class="cover-background full-screen ipad-top-space-margin py-0 md-h-1200px sm-h-1000px xl-h-1000px fix-height"
+      style="background-image: url(/Empresario/images/event-images/images\ \(4\).jpeg); background-color: #252840; min-height: 800px;"
     >
       <div class="opacity-very-light bg-black"></div>
       <div class="shape-image-animation bottom-0 p-0 w-100 d-none d-md-block">
@@ -182,7 +210,7 @@
           </path>
         </svg>
       </div>
-      <div class="container h-100">
+      <div class="container h-100 md-mt">
         <div class="row align-items-center h-100" >
           <div
             class="col-xl-6 col-lg-8 col-md-10 position-relative z-index-1"
@@ -228,7 +256,7 @@
             class="col-xl-6 col-lg-8 col-md-10 position-relative z-index-1"
             data-anime='{ "el": "childs", "translateY": [0, 0], "perspective": [1200,1200], "scale": [1.05, 1], "rotateX": [30, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'
           >
-          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-bottom: 80px;">
             <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;" src="https://www.youtube.com/embed/DeBZpUL-Ne0?si=x3gG0JjOh3gQ2z2-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
           </div>
@@ -450,7 +478,7 @@
               data-shadow-animation="true"
             >
               <img
-                src="/Empresario/images/event-images/LoohygieneSlider.jpg"
+                src="/Empresario/images/event-images/about-img-3.jpg"
                 alt=""
                 class="border-radius-8px w-100"
               />
@@ -463,7 +491,7 @@
               data-top-bottom="transform: translateY(-50px)"
             >
               <img
-                src="/Empresario/images/event-images/team-group-image.jpg"
+                src="/Empresario/images/event-images/about-img-1.jpg"
                 alt=""
                 class="border-radius-8px w-100 box-shadow-quadruple-large"
                 style="max-height: 400px; object-fit: cover;"
@@ -551,7 +579,7 @@
                   class="lg-w-100"
                   src="/Empresario/images/tracks/track2.jpg"
                   alt=""
-                  style="filter: grayscale(0.2);"
+                  style="filter: grayscale(0.2); object-fit: cover;"
                 />
                 <div
                   class="overlay-bg bg-gradient-gray-light-dark-transparent opacity-full-dark"
@@ -601,7 +629,7 @@
                   class="lg-w-100"
                   src="/Empresario/images/tracks/track4.jpg"
                   alt=""
-                  style="filter: grayscale(0.2);"
+                  style="filter: grayscale(0.2); object-fit: cover;"
                 />
                 <div
                   class="overlay-bg bg-gradient-gray-light-dark-transparent opacity-full-dark"
@@ -651,7 +679,7 @@
                   class="lg-w-100"
                   src="/Empresario/images/tracks/track3.jpg"
                   alt=""
-                  style="filter: grayscale(0.2);"
+                  style="filter: grayscale(0.2);  object-fit: cover;"
                 />
                 <div
                   class="overlay-bg bg-gradient-gray-light-dark-transparent opacity-full-dark"
@@ -1165,7 +1193,7 @@
                   </div>
                   <div class="feature-box-content">
                       <span class="d-inline-block fs-18 text-white fw-500 mb-5px">Startup Services</span>
-                      <p class="text-light-opacity">Advice on legal, taxation, financial, technical aspects of running a startup, co-working space, HR needs etc. <br/><br/></p>
+                      <p class="text-light-opacity">Startups at Empresario receive premium software access and valuable credits on leading platforms to accelerate growth.<br/><br/></p>
                   </div>
                   <div class="feature-box-overlay bg-cornflower-blue"></div>
               </div>  
@@ -1175,7 +1203,7 @@
               <div class="col icon-with-text-style-02 transition-inner-all mb-30px">
                   <div style="background-color: #3f425d;" class="feature-box feature-box-left-icon-middle text-start hover-box dark-hover bg-dark-slate-blue border-radius-8px p-9 overflow-hidden last-paragraph-no-margin">
                       <div class="feature-box-icon">
-                          <i class="line-icon-Gear icon-double-large text-white"></i>
+                        <i class="line-icon-Archery-2 icon-double-large text-white"></i>
                       </div>
                       <div class="feature-box-content">
                           <span class="d-inline-block fs-18 text-white fw-500 mb-5px">Elevator Pitch</span>
@@ -1189,7 +1217,7 @@
               <div class="col icon-with-text-style-02 transition-inner-all md-mb-30px">
                   <div style="background-color: #3f425d;" class="feature-box feature-box-left-icon-middle text-start hover-box dark-hover bg-dark-slate-blue border-radius-8px p-9 overflow-hidden last-paragraph-no-margin">
                       <div class="feature-box-icon">
-                          <i class="line-icon-Navigation-LeftWindow icon-double-large text-white"></i>
+                        <i class="line-icon-Archery-2 icon-double-large text-white"></i>
                       </div>
                       <div class="feature-box-content">
                           <span class="d-inline-block fs-18 text-white fw-500 mb-5px">Prize Money</span>
@@ -1203,7 +1231,7 @@
               <div class="col icon-with-text-style-02 transition-inner-all">
                   <div style="background-color: #3f425d;" class="feature-box feature-box-left-icon-middle text-start hover-box dark-hover bg-dark-slate-blue border-radius-8px p-9 overflow-hidden last-paragraph-no-margin">
                       <div class="feature-box-icon">
-                          <i class="line-icon-Female icon-double-large text-white"></i>
+                        <i class="line-icon-Archery-2 icon-double-large text-white"></i>
                       </div>
                       <div class="feature-box-content">
                           <span class="d-inline-block fs-18 text-white fw-500 mb-5px">Feedback</span>
@@ -1497,8 +1525,8 @@
       <div
         class="container background-no-repeat background-position-top"
         style="
-          background-image: url('public/static/images/demo-it-business-testimonial-bg.png');
-          
+          background-image: url('/Empresario/images/demo-it-business-testimonial-bg.png');
+          display: none;
           margin-top: 100px;
         "
          
@@ -1510,7 +1538,7 @@
             
             >
             <h3 class="text-dark-gray fw-700 ls-minus-2px" style="margin-bottom: 50px;">
-              Testimonials
+              Testimonial
             </h3>
           </div>
         </div>
@@ -1708,7 +1736,156 @@
 
     <!--Gallery start section -->
 
-    <section class="ps-5 pe-5 lg-ps-2 lg-pe-2" style="margin-top: -80px;">
+    <!-- start section -->
+<section class="pt-0 overflow-hidden">
+  <h3 class="text-dark-gray fw-700 ls-minus-2px" style="text-align: center; margin-bottom: 50px;">Gallery</h3>
+  <div class="container-fluid p-0">
+    <div class="row align-items-center g-0">
+      <div
+        class="col-12 position-relative swiper-dark-pagination magic-cursor drag-cursor"
+        data-anime='{ "translateX": [150, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'
+      >
+        <div
+          class="swiper overflow-visible"
+          data-slider-options='{
+            "slidesPerView": 1,
+            "spaceBetween": 40,
+            "centeredSlides": "true",
+            "loop": true,
+            "autoplay": {
+              "delay": 1600,
+              "disableOnInteraction": false
+            },
+            "pagination": {
+              "el": ".swiper-pagination-bullets-01",
+              "clickable": true,
+              "dynamicBullets": false
+            },
+            "keyboard": {
+              "enabled": true,
+              "onlyInViewport": true
+            },
+            "breakpoints": {
+              "992": {
+                "slidesPerView": 1.8
+              },
+              "768": {
+                "slidesPerView": 1.8
+              },
+              "320": {
+                "slidesPerView": 1.3
+              }
+            },
+            "effect": "slide"
+          }'
+        >
+          <div class="swiper-wrapper align-items-center">
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-1.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-2.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-3.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-5.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-7.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-9.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-10.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-11.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-12.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+            <!-- start carousel item -->
+            <div class="swiper-slide">
+              <img
+                class="border-radius-6px w-100"
+                src="/Empresario/images/event-images/event-image-14.jpg"
+                alt=""
+              />
+            </div>
+            <!-- end carousel item -->
+          </div>
+        </div>
+        <!-- start slider pagination -->
+        <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-style-01 swiper-pagination-bullets-01 position-static mt-40px"
+        ></div>
+        <!-- end slider pagination -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section -->
+
+    <!--Hiding the tile type gallery-->
+
+    <section class="ps-5 pe-5 lg-ps-2 lg-pe-2" style="margin-top: -80px; display: none;">
       <h3 class="text-dark-gray fw-700 ls-minus-2px" style="text-align: center; margin-top: -20px; margin-bottom: 50px;">Gallery</h3>
       <div class="container-fluid"> 
           <div class="row">
@@ -1900,7 +2077,7 @@
               ><i
                 class="bi bi-megaphone text-white d-inline-block align-middle icon-small me-10px"
               ></i>
-              Let's build the next big startup together.</span
+              let's build an enterprising indian</span
             >
             <h1 class="text-white fw-600 ls-minus-2px mb-50px">
               Your chance to win prizes worth 1 CR
