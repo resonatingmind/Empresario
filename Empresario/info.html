@@ -34,6 +34,183 @@
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="stylesheet" href="css/responsive.min.css" />
     <link rel="stylesheet" href="demos/it-business/it-business.css" />
+    
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+
+
+h1 {
+  text-align: center;
+}
+
+.timeline {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+.timeline::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: rgb(225, 225, 225);
+  border-radius: calc(var(--line-w) / 2);
+}
+
+/* columns*/
+
+/* row gaps */
+.timeline li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+/* card */
+.timeline li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+/* date */
+.timeline li .date {
+  --dateH: 3rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
+
+  text-align: center;
+  background-color: var(--accent-color);
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* date flap */
+.timeline li .date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+/* circle */
+.timeline li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* title descr */
+.timeline li .title,
+.timeline li .descr {
+  background: var(--bgColor);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+.timeline li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.timeline li .descr {
+  padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+/* shadows */
+.timeline li .title::before,
+.timeline li .descr::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+.timeline li .title::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+.timeline li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
+.blue-hover:hover {
+    color: black;
+    --accent-color:red;
+}
+
+@media (min-width: 40rem) {
+  .timeline {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  .timeline::before {
+    grid-column: 2;
+  }
+  .timeline li:nth-child(odd) {
+    grid-column: 1;
+  }
+  .timeline li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  .timeline li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  .timeline li:nth-child(odd) .date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  .timeline li:nth-child(odd) .date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  .timeline li:nth-child(odd) .date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+  }
+}
+    </style>
+
   </head>
   <body
     data-mobile-nav-style="full-screen-menu"
@@ -366,8 +543,132 @@
               <!-- start tab content -->
               <div class="tab-pane fade in" id="tab_sec2">
                 <div class="row justify-content-center align-items-center">
+    <!--Timeline section-->
+                  <ul style="margin-top: 50px; background-color: white;" class="timeline bg-dark-slate-blue border-radius-6px p-8 md-p-6 sm-p-10 position-relative overflow-hidden">
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">31st Sep 2024</div>
+                          <div class="title">Empresario Launches</div>
+                          <div class="descr">The official start of Empresario marks a major milestone, paving the way for budding entrepreneurs to embark on their journey.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">5th Oct 2024</div>
+                          <div class="title">Early Bird Registration Deadline</div>
+                          <div class="descr">This is the final date for early bird registrations. Participants who register by this date enjoy early exposure and added opportunities.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">10th Oct 2024</div>
+                          <div class="title">Early Bird Semifinalist Declaration</div>
+                          <div class="descr">The selected semi-finalists from early bird registrations will be announced. These teams advance to the next round to refine their ideas.
+                          </div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">10th Oct 2024</div>
+                          <div class="title">Early Bird Semi-Finalist Mentoring Starts</div>
+                          <div class="descr">Mentoring begins for the early bird semi-finalists, offering key insights from experts to improve business models and pitches.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">25th Nov 2024</div>
+                          <div class="title">Rugular Registration Deadline</div>
+                          <div class="descr">The last date for regular registrations. Teams who register by this deadline have their final chance to join the competition.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">30th Nov 2024</div>
+                          <div class="title">Regular Semi-Finalist Declaration</div>
+                          <div class="descr">The semi-finalists will be announced, with those selected earning the chance to compete in the grand finale for top prizes.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">1st Dec 2024</div>
+                          <div class="title">Regular Semi-Finalist Mentoring Starts</div>
+                          <div class="descr">The second phase of mentoring kicks off, guiding regular participants as they enhance their business plans and presentations.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">1st Jan 2025</div>
+                          <div class="title">Final Submission</div>
+                          <div class="descr">Teams must submit their completed business models and presentations by this deadline to move forward in the competition.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">10th Jan 2025</div>
+                          <div class="title">Declaration Of Finalist</div>
+                          <div class="descr">The final teams who will present at the grand finale will be announced, and they’ll get ready to pitch their ideas.</div>
+                      </li>
+                      <li class="blue-hover" style="--accent-color:#252840">
+                          <div class="date">1st Feb 2025</div>
+                          <div class="title">Empresario Grand Finals</div>
+                          <div class="descr">The grand finale will be held in Kolkata, where finalists will present their business models to a panel of judges.</div>
+                      </li>
+                  </ul>
+
+      
+      <!-- start section -->
+        <div class="container" style="margin-top: 50px; display: none;"> 
+            <div class="row justify-content-center mb-3">
+                <div style="display: none;" class="col-12 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center g-0" data-anime='{ "el": "childs", "translateX": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                <!-- start process step item -->
+                <div class="col process-step-style-06 text-center last-paragraph-no-margin hover-box md-mb-50px">
+                    <h4 class="d-block text-dark-gray mb-0 fw-700 ls-minus-2px">31st Sep</h4>
+                    <div class="process-step-icon-box position-relative mt-25px mb-25px">
+                        <span class="progress-step-separator bg-dark-gray w-100 separator-line-1px opacity-1"></span>
+                        <div class="step-box d-flex align-items-center justify-content-center bg-white box-shadow-medium-bottom border-radius-100 mx-auto w-30px h-30px">
+                            <span class="w-8px h-8px bg-base-color border-radius-100"></span>
+                        </div>
+                    </div>
+                    <span class="d-inline-block fw-600 text-dark-gray fs-18 mb-5px">Empresario Launches</span>
+                    <p class="w-75 sm-w-85 d-inline-block ">Lorem ipsum is simply text of the printing typesetting.</p>
+                </div>
+                <!-- end process step item -->
+                <!-- start process step item -->
+                <div class="col process-step-style-06 text-center last-paragraph-no-margin hover-box md-mb-50px">
+                    <h4 class="d-block text-dark-gray mb-0 fw-700 ls-minus-2px">5th Oct</h4>
+                    <div class="process-step-icon-box position-relative mt-25px mb-25px">
+                        <span class="progress-step-separator bg-dark-gray w-100 separator-line-1px opacity-1"></span>
+                        <div class="step-box d-flex align-items-center justify-content-center bg-white box-shadow-medium-bottom border-radius-100 mx-auto w-30px h-30px">
+                            <span class="w-8px h-8px bg-base-color border-radius-100"></span>
+                        </div>
+                    </div>
+                    <span class="d-inline-block fw-600 text-dark-gray fs-18 mb-5px">Preliminary Evaluation Starts</span>
+                    <p class="w-75 sm-w-85 d-inline-block ">Lorem ipsum is simply text of the printing typesetting.</p>
+                </div>
+                <!-- end process step item -->
+                <!-- start process step item -->
+                <div class="col process-step-style-06 text-center last-paragraph-no-margin hover-box xs-mb-50px">
+                    <h4 class="d-block text-dark-gray mb-0 fw-700 ls-minus-2px">10th Oct</h4>
+                    <div class="process-step-icon-box position-relative mt-25px mb-25px">
+                        <span class="progress-step-separator bg-dark-gray w-100 separator-line-1px opacity-1"></span>
+                        <div class="step-box d-flex align-items-center justify-content-center bg-white box-shadow-medium-bottom border-radius-100 mx-auto w-30px h-30px">
+                            <span class="w-8px h-8px bg-base-color border-radius-100"></span>
+                        </div>
+                    </div>
+                    <span class="d-inline-block fw-600 text-dark-gray fs-18 mb-5px">Relocates headquarter</span>
+                    <p class="w-75 sm-w-85 d-inline-block ">Lorem ipsum is simply text of the printing typesetting.</p>
+                </div>
+                <!-- end process step item -->
+                <!-- start process step item -->
+                <div class="col process-step-style-06 text-center last-paragraph-no-margin hover-box">
+                    <h4 class="d-block text-dark-gray mb-0 fw-700 ls-minus-2px">10th Oct</h4>
+                    <div class="process-step-icon-box position-relative mt-25px mb-25px">
+                        <span class="progress-step-separator bg-dark-gray w-100 separator-line-1px opacity-1"></span>
+                        <div class="step-box d-flex align-items-center justify-content-center bg-white box-shadow-medium-bottom border-radius-100 mx-auto w-30px h-30px">
+                            <span class="w-8px h-8px bg-base-color border-radius-100"></span>
+                        </div>
+                    </div>
+                    <span class="d-inline-block fw-600 text-dark-gray fs-18 mb-5px">Revenue of millions</span>
+                    <p class="w-75 sm-w-85 d-inline-block ">Lorem ipsum is simply text of the printing typesetting.</p>
+                </div>
+                <!-- end process step item -->
+                
+            </div>
+            
+        </div>
+    <!-- end section -->
+    
+    
+                
                   <!-- start timeline section -->
-      <div class="container bg-dark-slate-blue border-radius-6px p-8 md-p-6 sm-p-10 position-relative overflow-hidden" style="background-color: white; margin-top: 50px;">
+      <div class="container bg-dark-slate-blue border-radius-6px p-8 md-p-6 sm-p-10 position-relative overflow-hidden" style="display: none; background-color: white; margin-top: 50px;">
         <div class="row mb-7 sm-mb-50px">
           <h2 class="fw-600" style="text-align: center; color: #1E2033;">Timeline</h2>
         </div>
